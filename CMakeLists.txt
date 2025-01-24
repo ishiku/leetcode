@@ -21,7 +21,7 @@ FetchContent_MakeAvailable(googletest)
 include(GoogleTest)
 
 set(SOURCES 
-  src/dummy_test.cpp
+  src/leetcode_test.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
