@@ -23,6 +23,7 @@ include(GoogleTest)
 set(SOURCES 
   src/leetcode_test.cpp
   src/binary_tree_preorder_traversal.cpp
+  src/92_binary_tree_inorder_traversal.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

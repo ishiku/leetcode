@@ -3,7 +3,6 @@
 #include <gtest/gtest.h>
 
 #include <algorithm>
-#include <functional>
 #include <stack>
 #include <tuple>
 #include <vector>
@@ -54,8 +53,7 @@ class BinaryTreePreorderTraversalTestFixture
     : public ::testing::TestWithParam<
           std::tuple<std::string, std::vector<int>>> {
 protected:
-  ::testing::AssertionResult
-  testTravers(std::function<std::vector<int>(TreeNode *)> fn) {
+  ::testing::AssertionResult testTravers(std::vector<int> (*fn)(TreeNode *)) {
     auto [tree_description, expected_output] = GetParam();
 
     auto root = deserializeTree(tree_description);
