@@ -4,6 +4,7 @@
 #include <queue>
 #include <sstream>
 #include <string>
+#include <vector>
 
 namespace leetcode {
 
@@ -24,6 +25,18 @@ inline void destroyTree(TreeNode *root) {
   destroyTree(root->left);
   destroyTree(root->right);
   delete root;
+}
+
+inline TreeNode::Ptr createTree(TreeNode *root) { return {root, destroyTree}; }
+
+inline bool isEqualTree(TreeNode *p, TreeNode *q) {
+  if (!p && !q)
+    return true;
+  if (p && !q || !p && q)
+    return false;
+  if (p->val != q->val)
+    return false;
+  return isEqualTree(p->left, q->left) && isEqualTree(p->right, q->right);
 }
 
 inline TreeNode::Ptr deserializeTree(std::string const &input) {
@@ -63,4 +76,19 @@ inline TreeNode::Ptr deserializeTree(std::string const &input) {
 
   return {root, destroyTree};
 }
+
+inline std::vector<int> deserializeVector(std::string const &input) {
+  if (input.empty())
+    return {};
+
+  std::vector<int> vec;
+  constexpr char DELIM = ',';
+  std::istringstream is(input);
+  std::string tmp;
+  while (std::getline(is, tmp, DELIM))
+    vec.push_back(std::stoi(tmp));
+
+  return vec;
+}
+
 } // namespace leetcode

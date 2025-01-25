@@ -27,6 +27,7 @@ set(SOURCES
   src/100_same_tree.cpp
   src/101_symmetric_tree.cpp
   src/104_maximum_depth_of_binary_tree.cpp
+  src/108_convert_sorted_array_to_binary_search_tree.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
