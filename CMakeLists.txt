@@ -22,7 +22,7 @@ include(GoogleTest)
 
 set(SOURCES 
   src/leetcode_test.cpp
-  src/binary_tree_preorder_traversal.cpp
+  src/144_binary_tree_preorder_traversal.cpp
   src/92_binary_tree_inorder_traversal.cpp
   src/100_same_tree.cpp
   src/101_symmetric_tree.cpp
