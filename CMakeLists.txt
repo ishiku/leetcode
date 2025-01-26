@@ -30,6 +30,7 @@ set(SOURCES
   src/108_convert_sorted_array_to_binary_search_tree.cpp
   src/110_balanced_binary_tree.cpp
   src/111_minimum_depth_of_binary_tree.cpp
+  src/112_path_sum.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
