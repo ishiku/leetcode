@@ -31,6 +31,7 @@ set(SOURCES
   src/110_balanced_binary_tree.cpp
   src/111_minimum_depth_of_binary_tree.cpp
   src/112_path_sum.cpp
+  src/145_binary_tree_postorder_traversal.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
