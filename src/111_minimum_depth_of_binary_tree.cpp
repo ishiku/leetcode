@@ -17,7 +17,13 @@ int minDepth(TreeNode *root) {
   if (root == nullptr)
     return 0;
 
-  return std::min(minDepth(root->left), minDepth(root->right)) + 1;
+  int left = minDepth(root->left);
+  int right = minDepth(root->right);
+
+  if (!left || !right)
+    return std::max(left, right) + 1;
+  else
+    return std::min(left, right) + 1;
 }
 
 } // namespace
@@ -39,10 +45,11 @@ INSTANTIATE_TEST_SUITE_P(
   ::testing::Values(
     std::make_tuple("", 0),
     std::make_tuple("1", 1),
-    std::make_tuple("1,2", 1),
-    std::make_tuple("1,null,2", 1),
+    std::make_tuple("1,2", 2),
+    std::make_tuple("1,null,2", 2),
     std::make_tuple("1,2,3", 2),
-    std::make_tuple("1,2,3,null,null,15,7", 2)
+    std::make_tuple("1,2,3,null,null,15,7", 2),
+    std::make_tuple("2,null,3,null,4,null,5,null,6", 5)
   )  
 );
 // clang-format on
