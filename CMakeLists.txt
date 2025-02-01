@@ -33,6 +33,7 @@ set(SOURCES
   src/112_path_sum.cpp
   src/145_binary_tree_postorder_traversal.cpp
   src/222_count_complete_tree_nodes.cpp
+  src/257_binary_tree_paths.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
